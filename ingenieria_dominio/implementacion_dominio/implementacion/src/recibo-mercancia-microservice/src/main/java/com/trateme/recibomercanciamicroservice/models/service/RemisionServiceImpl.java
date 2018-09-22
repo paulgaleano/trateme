@@ -28,4 +28,10 @@ public class RemisionServiceImpl implements IRemisionService {
 		return remisionDao.save(r);
 	}
 
+	@Override
+	@Transactional(readOnly=true)
+	public Remision findById(String id) {
+		return remisionDao.findById(id).orElse(null);
+	}
+
 }

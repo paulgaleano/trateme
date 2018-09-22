@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,11 @@ public class RemisionController {
 	@Autowired
 	private IRemisionService remisionService;
 	
+	@GetMapping("/remision/{id}")
+	@ResponseStatus(HttpStatus.OK)
+	public Remision findById(@PathVariable String id) {
+		return remisionService.findById(id);
+	}
 	
 	@GetMapping("/remision/all")
 	@ResponseStatus(HttpStatus.OK)

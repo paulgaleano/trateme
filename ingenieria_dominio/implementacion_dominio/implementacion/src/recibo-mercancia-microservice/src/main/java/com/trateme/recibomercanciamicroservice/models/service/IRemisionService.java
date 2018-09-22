@@ -9,5 +9,7 @@ public interface IRemisionService {
 
 	public List<Remision> findAll();
 	
+	public Remision findById(String id);
+	
 	public Remision save(Remision r);
 }
