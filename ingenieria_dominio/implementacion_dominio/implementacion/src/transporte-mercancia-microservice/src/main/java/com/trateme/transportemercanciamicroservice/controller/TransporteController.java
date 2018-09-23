@@ -6,6 +6,7 @@ import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,19 +37,19 @@ public class TransporteController {
 		return transporteService.findAll();
 	}
 	
+	@CrossOrigin(origins= {""})
 	@PostMapping("/transportemercancia/transportardireccionrecibo")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Transporte save(@RequestBody Transporte r) {		
-		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
-		r.tipoTransporte=1; //desde dirección de origen 
+	public Transporte saveD(@PathVariable Transporte r) {		
+		r.setTipoTransporte(Long.valueOf(1)); //desde dirección de origen 
 		return transporteService.save(r);
 	}
 	
+	@CrossOrigin(origins= {""})
 	@PostMapping("/transportemercancia/transportardireccionrecibo")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Transporte save(@RequestBody Transporte r) {		
-		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
-		r.tipoTransporte=2; //desde dirección de destino 
+	public Transporte save(@PathVariable Transporte r) {		
+		r.setTipoTransporte(Long.valueOf(2)); //desde dirección de destino 
 		return transporteService.save(r);
 	}
 }
