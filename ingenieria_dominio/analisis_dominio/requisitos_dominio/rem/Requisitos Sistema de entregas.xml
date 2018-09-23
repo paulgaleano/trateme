@@ -208,7 +208,7 @@ Ninguno</rem:comments>
 <rem:actor
  oid = "ACT-0003">
 <rem:name>
-Tripulación</rem:name>
+<rem:ref oid="GLO-0007">Tripulación</rem:ref></rem:name>
 <rem:version>
 <rem:major>1</rem:major>
 <rem:minor>0</rem:minor>
@@ -283,7 +283,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-Construir una línea de productos de sofware en el dominio del transporte terrestre de <rem:ref oid="GLO-0001">mercancía</rem:ref>.</rem:description>
+Construir una línea de productos de software en el dominio del transporte terrestre de <rem:ref oid="GLO-0001">mercancía</rem:ref>.</rem:description>
 <rem:objective
  oid = "OBJ-0002">
 <rem:name>
@@ -364,7 +364,7 @@ Ninguno</rem:comments>
 <rem:tbd/>
 </rem:stability>
 <rem:description>
-Construir una línea de productos que permita gestionar la información del transporte de <rem:ref oid="GLO-0001">mercancía</rem:ref> desde el orígen hasta el destino.</rem:description>
+Construir una línea de productos que permita gestionar la información del transporte de <rem:ref oid="GLO-0001">mercancía</rem:ref> desde el origen hasta el destino.</rem:description>
 </rem:objective>
 <rem:objective
  oid = "OBJ-0005">
@@ -511,7 +511,7 @@ Es la fecha en la que van a recoger la <rem:ref oid="GLO-0001">mercancía</rem:re
 </rem:specificData>
 <rem:specificData oid = "DAT-0076">
 <rem:description>
-Código tripulación</rem:description>
+Código <rem:ref oid="GLO-0007">tripulación</rem:ref></rem:description>
 <rem:comments>
 Ninguno</rem:comments>
 </rem:specificData>
@@ -643,7 +643,7 @@ Identificación de la programación de recogida asociada.</rem:comments>
 </rem:specificData>
 <rem:specificData oid = "DAT-0029">
 <rem:description>
-Código tripulación</rem:description>
+Código <rem:ref oid="GLO-0007">tripulación</rem:ref></rem:description>
 <rem:comments>
 Ninguno</rem:comments>
 </rem:specificData>
@@ -694,12 +694,6 @@ Ninguno</rem:comments>
 Token</rem:description>
 <rem:comments>
 Ninguno</rem:comments>
-</rem:specificData>
-<rem:specificData oid = "DAT-0081">
-<rem:description>
-Porcentaje descuento</rem:description>
-<rem:comments>
-porcentaje aplicado si es en origen, <rem:ref oid="GLO-0004">ventanilla</rem:ref> o <rem:ref oid="GLO-0006">base</rem:ref><br/><br/>aqui va el case de variabilidad en la lógica</rem:comments>
 </rem:specificData>
 </rem:informationRequirement>
 <rem:informationRequirement
@@ -757,7 +751,7 @@ Identificador del recibo de <rem:ref oid="GLO-0001">mercancía</rem:ref> asociado
 </rem:specificData>
 <rem:specificData oid = "DAT-0054">
 <rem:description>
-Código tripulación</rem:description>
+Código <rem:ref oid="GLO-0007">tripulación</rem:ref></rem:description>
 <rem:comments>
 Ninguno</rem:comments>
 </rem:specificData>
@@ -841,7 +835,7 @@ Ninguno</rem:comments>
 </rem:specificData>
 <rem:specificData oid = "DAT-0065">
 <rem:description>
-Código tripulación</rem:description>
+Código <rem:ref oid="GLO-0007">tripulación</rem:ref></rem:description>
 <rem:comments>
 Ninguno</rem:comments>
 </rem:specificData>
@@ -855,13 +849,13 @@ Ninguno</rem:comments>
 <rem:description>
 Tipo entrega</rem:description>
 <rem:comments>
-Ventilla, Direccion destino, <rem:ref oid="GLO-0006">Base</rem:ref></rem:comments>
+Ventilla, Dirección destino, <rem:ref oid="GLO-0006">Base</rem:ref></rem:comments>
 </rem:specificData>
 <rem:specificData oid = "DAT-0083">
 <rem:description>
 Porcentaje flete</rem:description>
 <rem:comments>
-porcentaje flete aplicado si es en destino, <rem:ref oid="GLO-0004">ventanilla</rem:ref> o <rem:ref oid="GLO-0006">base</rem:ref><br/><br/>aqui va el case de variabilidad en la lógica</rem:comments>
+porcentaje flete aplicado si es en destino, <rem:ref oid="GLO-0004">ventanilla</rem:ref> o <rem:ref oid="GLO-0006">base</rem:ref></rem:comments>
 </rem:specificData>
 </rem:informationRequirement>
 <rem:informationRequirement
@@ -927,7 +921,7 @@ Externo, Interno, Interno-Externo</rem:comments>
 <rem:informationRequirement
  oid = "IRQ-0008">
 <rem:name>
-Tripulación</rem:name>
+<rem:ref oid="GLO-0007">Tripulación</rem:ref></rem:name>
 <rem:version>
 <rem:major>1</rem:major>
 <rem:minor>0</rem:minor>
@@ -961,7 +955,7 @@ el tripulante</rem:relevantConcept>
 </rem:maximumOcurrences>
 <rem:specificData oid = "DAT-0032">
 <rem:description>
-Código tripulación</rem:description>
+Código <rem:ref oid="GLO-0007">tripulación</rem:ref></rem:description>
 <rem:comments>
 Ninguno</rem:comments>
 </rem:specificData>
@@ -1024,7 +1018,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-permitir programar el servicio de recogida de mercacía solicitada por un <rem:ref oid="GLO-0002">remitente</rem:ref> a través de una API.<br/>Debe almacenar información requerida en IRQ-0001.</rem:description>
+permitir programar el servicio de recogida de <rem:ref oid="GLO-0001">mercancía</rem:ref> solicitada por un <rem:ref oid="GLO-0002">remitente</rem:ref> a través de una API.<br/>Debe almacenar información requerida en IRQ-0001.</rem:description>
 </rem:functionalRequirement>
 <rem:functionalRequirement
  oid = "FRQ-0002">
@@ -1048,7 +1042,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-permitir guardar la información del recibo de <rem:ref oid="GLO-0001">mercancía</rem:ref> a través de una API.<br/>Debe almacerar la información requerida en IRQ-0002.</rem:description>
+permitir guardar la información del recibo de <rem:ref oid="GLO-0001">mercancía</rem:ref> a través de una API.<br/>Debe almacenar la información requerida en IRQ-0002.</rem:description>
 </rem:functionalRequirement>
 <rem:functionalRequirement
  oid = "FRQ-0007">
@@ -1072,7 +1066,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-permitir guardar la información del recibo de <rem:ref oid="GLO-0001">mercancía</rem:ref> en <rem:ref oid="GLO-0005">dirección de origen</rem:ref> a través de una API.<br/>Debe almacerar la información requerida en IRQ-0002.</rem:description>
+permitir guardar la información del recibo de <rem:ref oid="GLO-0001">mercancía</rem:ref> en <rem:ref oid="GLO-0005">dirección de origen</rem:ref> a través de una API.<br/>Debe almacenar la información requerida en IRQ-0002.</rem:description>
 </rem:functionalRequirement>
 <rem:functionalRequirement
  oid = "FRQ-0008">
@@ -1096,7 +1090,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-permitir guardar la información del recibo de <rem:ref oid="GLO-0001">mercancía</rem:ref> por <rem:ref oid="GLO-0004">ventanilla</rem:ref> a través de una API.<br/>Debe almacerar la información requerida en IRQ-0002.</rem:description>
+permitir guardar la información del recibo de <rem:ref oid="GLO-0001">mercancía</rem:ref> por <rem:ref oid="GLO-0004">ventanilla</rem:ref> a través de una API.<br/>Debe almacenar la información requerida en IRQ-0002.</rem:description>
 </rem:functionalRequirement>
 <rem:functionalRequirement
  oid = "FRQ-0009">
@@ -1120,7 +1114,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-permitir guardar la información del recibo de <rem:ref oid="GLO-0001">mercancía</rem:ref> en <rem:ref oid="GLO-0006">base</rem:ref> a través de una API.<br/>Debe almacerar la información requerida en IRQ-0002.</rem:description>
+permitir guardar la información del recibo de <rem:ref oid="GLO-0001">mercancía</rem:ref> en <rem:ref oid="GLO-0006">base</rem:ref> a través de una API.<br/>Debe almacenar la información requerida en IRQ-0002.</rem:description>
 </rem:functionalRequirement>
 <rem:functionalRequirement
  oid = "FRQ-0003">
@@ -1144,7 +1138,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-debería permitir almacenar la información del transporte de la mercancia a través de una API.</rem:description>
+debería permitir almacenar la información del transporte de la <rem:ref oid="GLO-0001">mercancía</rem:ref> a través de una API.</rem:description>
 </rem:functionalRequirement>
 <rem:functionalRequirement
  oid = "FRQ-0010">
@@ -1168,7 +1162,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-debería permitir almacenar la información del transporte de la mercancia en caso de ser necesario desde el lugar de recogida hasta la central a través de una API.<br/>Debe almacerar la información requerida en IRQ-0003.</rem:description>
+debería permitir almacenar la información del transporte de la <rem:ref oid="GLO-0001">mercancía</rem:ref> en caso de ser necesario desde el lugar de recogida hasta la central a través de una API.<br/>Debe almacenar la información requerida en IRQ-0003.</rem:description>
 </rem:functionalRequirement>
 <rem:functionalRequirement
  oid = "FRQ-0012">
@@ -1192,7 +1186,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-debería almacenar la información del transporte de la mercancia en caso de ser necesario desde la central hasta el lugar de entrega  a través de una API.<br/>Debe almacerar la información requerida en IRQ-0003.</rem:description>
+debería almacenar la información del transporte de la <rem:ref oid="GLO-0001">mercancía</rem:ref> en caso de ser necesario desde la central hasta el lugar de entrega  a través de una API.<br/>Debe almacenar la información requerida en IRQ-0003.</rem:description>
 </rem:functionalRequirement>
 <rem:functionalRequirement
  oid = "FRQ-0004">
@@ -1240,7 +1234,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-guardar la información de la entrega en dirección destino de la <rem:ref oid="GLO-0001">mercancía</rem:ref> al <rem:ref oid="GLO-0003">destinatario</rem:ref> a través de una API.<br/>Debe almacerar la información requerida en IRQ-0004.</rem:description>
+guardar la información de la entrega en dirección destino de la <rem:ref oid="GLO-0001">mercancía</rem:ref> al <rem:ref oid="GLO-0003">destinatario</rem:ref> a través de una API.<br/>Debe almacenar la información requerida en IRQ-0004.</rem:description>
 </rem:functionalRequirement>
 <rem:functionalRequirement
  oid = "FRQ-0016">
@@ -1264,7 +1258,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-guardar la información de la entrega en <rem:ref oid="GLO-0006">base</rem:ref> de la <rem:ref oid="GLO-0001">mercancía</rem:ref> al <rem:ref oid="GLO-0003">destinatario</rem:ref> a través de una API<br/>Debe almacerar la información requerida en IRQ-0004.</rem:description>
+guardar la información de la entrega en <rem:ref oid="GLO-0006">base</rem:ref> de la <rem:ref oid="GLO-0001">mercancía</rem:ref> al <rem:ref oid="GLO-0003">destinatario</rem:ref> a través de una API<br/>Debe almacenar la información requerida en IRQ-0004.</rem:description>
 </rem:functionalRequirement>
 <rem:functionalRequirement
  oid = "FRQ-0017">
@@ -1288,7 +1282,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-guardar la información de la entrega en <rem:ref oid="GLO-0004">ventanilla</rem:ref> de la <rem:ref oid="GLO-0001">mercancía</rem:ref> al <rem:ref oid="GLO-0003">destinatario</rem:ref> a través de una API.<br/>Debe almacerar la información requerida en IRQ-0004.</rem:description>
+guardar la información de la entrega en <rem:ref oid="GLO-0004">ventanilla</rem:ref> de la <rem:ref oid="GLO-0001">mercancía</rem:ref> al <rem:ref oid="GLO-0003">destinatario</rem:ref> a través de una API.<br/>Debe almacenar la información requerida en IRQ-0004.</rem:description>
 </rem:functionalRequirement>
 <rem:functionalRequirement
  oid = "FRQ-0005">
@@ -1384,7 +1378,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-permitir consultar las programaciones de servicios de recogida de mercacía a través de una API.<br/>Debe consultar información requerida en IRQ-0001.</rem:description>
+permitir consultar las programaciones de servicios de recogida de <rem:ref oid="GLO-0001">mercancía</rem:ref> a través de una API.<br/>Debe consultar información requerida en IRQ-0001.</rem:description>
 </rem:functionalRequirement>
 <rem:functionalRequirement
  oid = "FRQ-0021">
@@ -1408,7 +1402,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-permitir consultar los recibos de mercacía a través de una API.<br/>Debe consultar información requerida en IRQ-0002.</rem:description>
+permitir consultar los recibos de <rem:ref oid="GLO-0001">mercancía</rem:ref> a través de una API.<br/>Debe consultar información requerida en IRQ-0002.</rem:description>
 </rem:functionalRequirement>
 <rem:functionalRequirement
  oid = "FRQ-0022">
@@ -1432,7 +1426,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-permitir consultar los transportes de mercacía desde el sitio de recibo hasta la central a través de una API.<br/>Debe consultar información requerida en IRQ-0003.</rem:description>
+permitir consultar los transportes de <rem:ref oid="GLO-0001">mercancía</rem:ref> desde el sitio de recibo hasta la central a través de una API.<br/>Debe consultar información requerida en IRQ-0003.</rem:description>
 </rem:functionalRequirement>
 <rem:functionalRequirement
  oid = "FRQ-0023">
@@ -1456,7 +1450,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-permitir consultar los transportes de mercacía desde la central hasta el sitio de entrega a través de una API.<br/>Debe consultar información requerida en IRQ-0003.</rem:description>
+permitir consultar los transportes de <rem:ref oid="GLO-0001">mercancía</rem:ref> desde la central hasta el sitio de entrega a través de una API.<br/>Debe consultar información requerida en IRQ-0003.</rem:description>
 </rem:functionalRequirement>
 <rem:functionalRequirement
  oid = "FRQ-0024">
@@ -1480,7 +1474,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-permitir consultar las entregas de mercacía a través de una API.<br/>Debe consultar información requerida en IRQ-0004.</rem:description>
+permitir consultar las entregas de <rem:ref oid="GLO-0001">mercancía</rem:ref> a través de una API.<br/>Debe consultar información requerida en IRQ-0004.</rem:description>
 </rem:functionalRequirement>
 </rem:section>
 <rem:section
@@ -1804,7 +1798,7 @@ Ninguno</rem:comments>
 <rem:status value = "STV-0002"/>
 <rem:stability value = "SBV-0004"/>
 <rem:description>
-usar microservicios en contenedores tales.</rem:description>
+usar microservicios.</rem:description>
 </rem:constraintRequirement>
 <rem:constraintRequirement
  oid = "CRQ-0002">
@@ -2197,6 +2191,23 @@ Ninguno</rem:comments>
 <rem:comments>
 Ninguno</rem:comments>
 <rem:text>Sucursal del operador logístico dentro de otra empresa.</rem:text>
+</rem:glossaryItem>
+<rem:glossaryItem
+ oid = "GLO-0007">
+<rem:name>
+<rem:ref oid="GLO-0007">Tripulación</rem:ref></rem:name>
+<rem:version>
+<rem:major>1</rem:major>
+<rem:minor>0</rem:minor>
+<rem:date>
+<rem:year>2018</rem:year>
+<rem:month>9</rem:month>
+<rem:day>23</rem:day>
+</rem:date>
+</rem:version>
+<rem:comments>
+Ninguno</rem:comments>
+<rem:text>Personal del operador encargado de realizar un proceso en todo el trámite del transporte de <rem:ref oid="GLO-0001">mercancía</rem:ref>.</rem:text>
 </rem:glossaryItem>
 </rem:section>
 </rem:c_requirementsSpecification>
