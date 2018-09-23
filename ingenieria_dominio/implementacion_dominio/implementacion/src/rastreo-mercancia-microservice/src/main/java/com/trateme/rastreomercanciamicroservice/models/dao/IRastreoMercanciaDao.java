@@ -10,6 +10,6 @@ import com.trateme.rastreomercanciamicroservice.models.entities.Rastreo;
 
 public interface IRastreoMercanciaDao extends CrudRepository<Rastreo, Long> {
 	public List<Rastreo> findByCodigoRemision(String codigoRemision);
-	@Query("select a from Rastreo a where codigo_remision=:codigo_remision and tipo=:tipo")
-	public List<Rastreo> findByCodigoRemisionAndTipo(@Param("codigo_remision") String codigoRemision, @Param("tipo") int tipo);
+	public List<Rastreo> findByCodigoRemisionAndTipo(String codigoRemision, Integer tipo);
+	public List<Rastreo> findByCodigoOperador(Integer codigoOperador);
 }

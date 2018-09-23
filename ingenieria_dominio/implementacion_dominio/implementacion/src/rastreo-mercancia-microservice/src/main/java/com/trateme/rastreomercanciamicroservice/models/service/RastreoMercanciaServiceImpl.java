@@ -13,6 +13,7 @@ import com.trateme.rastreomercanciamicroservice.models.entities.Rastreo;
 
 @Service
 public class RastreoMercanciaServiceImpl implements IRastreoMercanciaService{
+	
 	@Autowired
 	private IRastreoMercanciaDao rastreoMercanciaDao;
 	
@@ -24,22 +25,6 @@ public class RastreoMercanciaServiceImpl implements IRastreoMercanciaService{
 		return rastreoMercanciaDao.findById(id);
 	}
 	
-	@Override
-	@Transactional(readOnly = true)
-	public List<Rastreo> findAll() {
-		return (List<Rastreo>) rastreoMercanciaDao.findAll();
-	}
-	
-	@Override
-	public List<Rastreo> findByCodigoRemision(String codigoRemision) {
-		return rastreoMercanciaDao.findByCodigoRemision(codigoRemision);
-	}
-
-	@Override
-	public List<Rastreo> findByCodigoRemisionAndTipo(String codigoRemision, int tipo) {
-		return rastreoMercanciaDao.findByCodigoRemisionAndTipo(codigoRemision,tipo);
-	}
-
 	@Override
 	public Rastreo save(Rastreo r) throws Exception {
 		boolean isSubProcesoValido = IntStream.of(RastreoMercanciaServiceImpl.CODIGOS_SUBPROCESO).anyMatch(x -> x == r.getCodigoSubProceso());
@@ -58,7 +43,28 @@ public class RastreoMercanciaServiceImpl implements IRastreoMercanciaService{
 	}
 
 	@Override
-	public void delete(Long id) {
+	public void deleteById(Long id) {
 		rastreoMercanciaDao.deleteById(id);
+	}
+	
+	@Override
+	@Transactional(readOnly = true)
+	public List<Rastreo> findAll() {
+		return (List<Rastreo>) rastreoMercanciaDao.findAll();
+	}
+	
+	@Override
+	public List<Rastreo> findByCodigoRemision(String codigoRemision) {
+		return rastreoMercanciaDao.findByCodigoRemision(codigoRemision);
+	}
+
+	@Override
+	public List<Rastreo> findByCodigoRemisionAndTipo(String codigoRemision, Integer tipo) {
+		return rastreoMercanciaDao.findByCodigoRemisionAndTipo(codigoRemision,tipo);
+	}
+
+	@Override
+	public List<Rastreo> findByCodigoOperador(Integer codigoOperador) {
+		return rastreoMercanciaDao.findByCodigoOperador(codigoOperador);
 	}
 }

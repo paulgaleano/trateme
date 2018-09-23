@@ -30,7 +30,12 @@ public class RastreoMercanciaController {
 		return recogidaMercanciaService.findAll();
 	}
 	
-	
+	@PostMapping("/rastreomercancias")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Rastreo save(@RequestBody Rastreo r) throws Exception {		
+		return recogidaMercanciaService.save(r);
+	}
+		
 	@GetMapping("/rastreomercancias/remisiones/{codigoRemision}")
 	@ResponseStatus(HttpStatus.OK)
 	public List<Rastreo> findByCodigoRemision(@PathVariable String codigoRemision) {		
@@ -39,14 +44,13 @@ public class RastreoMercanciaController {
 	
 	@GetMapping("/rastreomercancias/remisiones/{codigoRemision}/tipos/{tipo}")
 	@ResponseStatus(HttpStatus.OK)
-	public List<Rastreo> findByCodigoRemisionAndTipo(@PathVariable String codigoRemision,@PathVariable Integer tipo) {		
+	public List<Rastreo> findByCodigoRemisionAndTipo(@PathVariable String codigoRemision, @PathVariable Integer tipo) {		
 		return recogidaMercanciaService.findByCodigoRemisionAndTipo(codigoRemision,tipo);
 	}
 	
-	@PostMapping("/rastreomercancias")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Rastreo save(@RequestBody Rastreo r) throws Exception {		
-		return recogidaMercanciaService.save(r);
+	@GetMapping("/rastreomercancias/operadores/{codigoOperador}")
+	@ResponseStatus(HttpStatus.OK)
+	public List<Rastreo> findAllByOperador(@PathVariable Integer codigoOperador){
+		return recogidaMercanciaService.findByCodigoOperador(codigoOperador);
 	}
-
 }
