@@ -53,4 +53,22 @@ public class RastreoMercanciaController {
 	public List<Rastreo> findAllByOperador(@PathVariable Integer codigoOperador){
 		return recogidaMercanciaService.findByCodigoOperador(codigoOperador);
 	}
+	
+	@GetMapping("/rastreomercancias/rastreointerno/{codigoRemision}")
+	@ResponseStatus(HttpStatus.OK)
+	public List<Rastreo> findByCodigoRemisionAndTipo(@PathVariable String codigoRemision, @PathVariable Integer tipo) {		
+		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
+		//mostrar todos los campos
+		Integer tipo=1;
+		return recogidaMercanciaService.findByCodigoRemisionAndTipo(codigoRemision,tipo);
+	}
+	
+	@GetMapping("/rastreomercancias/rastreoexterno/{codigoRemision}")
+	@ResponseStatus(HttpStatus.OK)
+	public List<Rastreo> findByCodigoRemisionAndTipo(@PathVariable String codigoRemision, @PathVariable Integer tipo) {		
+		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
+		//mostrar solo algunos campos
+		Integer tipo=2;
+		return recogidaMercanciaService.findByCodigoRemisionAndTipo(codigoRemision,tipo);
+	}
 }
