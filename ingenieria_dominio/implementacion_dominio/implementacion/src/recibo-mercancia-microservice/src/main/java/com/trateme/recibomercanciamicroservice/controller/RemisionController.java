@@ -38,27 +38,30 @@ public class RemisionController {
 	@PostMapping("/recibomercancia/recibirenventanilla")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Remision save(@RequestBody Remision r) {	 
+		r.tipoRecogida=1; //ventanilla
 		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
 		//flete 0%
-		r.tipoRecogida=1; //ventanilla
+		r.fleteTotal=0;
 		return remisionService.save(r);
 	} 
 	
 	@PostMapping("/recibomercancia/recibirenbase")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Remision save(@RequestBody Remision r) {		
+		r.tipoRecogida=2; //base
 		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
 		//flete 50%
-		r.tipoRecogida=2; //base
+		r.fleteTotal=50;
 		return remisionService.save(r);
 	} 
 	
 	@PostMapping("/recibomercancia/recibirendireccionorigen")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Remision save(@RequestBody Remision r) {		
+		r.tipoRecogida=3; //dirección origen
 		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
 		//flete 100% 
-		r.tipoRecogida=3; //dirección origen
+		r.fleteTotal=100;
 		return remisionService.save(r);
 	} 
 }

@@ -52,27 +52,30 @@ public class EntregaMercanciaController {
 	@PostMapping("/entregarmercancia/entregarenventanilla")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Remision save(@RequestBody Entrega e) {	 
+		r.tipoEntrega=1; //ventanilla
 		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
 		//flete 0%
-		r.tipoEntrega=1; //ventanilla
+		r.flete=0;
 		return entregaMercanciaService.save(e);
 	} 
 	
 	@PostMapping("/entregarmercancia/entregarenbase")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Remision save(@RequestBody Entrega e) {		
+		r.tipoEntrega=2; //base
 		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
 		//flete 50%
-		r.tipoEntrega=2; //base
+		r.flete=50;
 		return entregaMercanciaService.save(e);
 	} 
 	
 	@PostMapping("/entregarmercancia/entregarendirecciondestino")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Remision save(@RequestBody Entrega e) {		
+		r.tipoEntrega=3; //dirección destino
 		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
 		//flete 100% 
-		r.tipoEntrega=3; //dirección destino
+		r.flete=100;
 		return entregaMercanciaService.save(e);
 	} 
 }

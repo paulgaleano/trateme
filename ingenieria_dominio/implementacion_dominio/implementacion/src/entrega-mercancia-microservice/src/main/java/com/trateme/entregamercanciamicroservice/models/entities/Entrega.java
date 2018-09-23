@@ -44,6 +44,9 @@ public class Entrega implements Serializable {
 	
 	@Column(name="token")
 	private String token;
+
+	@Column(name="flete")
+	private Double flete;
 	
 
 	public Long getCodigoEntrega() {
@@ -108,6 +111,14 @@ public class Entrega implements Serializable {
 
 	public void setToken(String token) {
 		this.token = token;
+	}
+	
+	public Double getFlete() {
+		return flete;
+	}
+
+	public void setFlete(Doble flete) {
+		this.flete = flete;
 	}
 
 	@PrePersist
