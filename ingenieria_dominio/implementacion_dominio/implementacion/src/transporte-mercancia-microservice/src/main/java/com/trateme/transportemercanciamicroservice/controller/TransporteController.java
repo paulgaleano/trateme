@@ -21,23 +21,22 @@ public class TransporteController {
 
 	@Autowired
 	private ITransporteService transporteService;
-	
+
 	@PostMapping("/transportemercancia/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Transporte findById(@PathVariable Long id) {
 		return transporteService.findById(id);
 	}
-	
+
 	@GetMapping("/transportemercancia/consultar")
 	@ResponseStatus(HttpStatus.OK)
-	public List<Transporte> findAll(){
+	public List<Transporte> findAll() {
 		return transporteService.findAll();
 	}
 
 	@PostMapping("/transportemercancia/transportardireccionrecibo")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Transporte save(@PathVariable Transporte r) {		
-		r.setTipoTransporte(Long.valueOf(2)); //desde dirección de destino 
-		return transporteService.save(r);
+	public Transporte save(@PathVariable Transporte t) {
+		return transporteService.save(t);
 	}
 }
