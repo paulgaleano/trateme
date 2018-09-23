@@ -24,21 +24,31 @@ public class TransporteController {
 	@Autowired
 	private ITransporteService transporteService;
 	
-	@PostMapping("/TransporteMercancia/{id}")
+	@PostMapping("/transportemercancia/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Transporte findById(@PathVariable Long id) {
 		return transporteService.findById(id);
 	}
 	
-	@GetMapping("/TransporteMercancia/Consultar")
+	@GetMapping("/transportemercancia/consultar")
 	@ResponseStatus(HttpStatus.OK)
 	public List<Transporte> findAll(){
 		return transporteService.findAll();
 	}
 	
-	@PostMapping("/transporte/save")
+	@PostMapping("/transportemercancia/transportardireccionrecibo")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Transporte save(@RequestBody Transporte r) {		
+		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
+		r.tipoTransporte=1; //desde dirección de origen 
+		return transporteService.save(r);
+	}
+	
+	@PostMapping("/transportemercancia/transportardireccionrecibo")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Transporte save(@RequestBody Transporte r) {		
+		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
+		r.tipoTransporte=2; //desde dirección de destino 
 		return transporteService.save(r);
 	}
 }
