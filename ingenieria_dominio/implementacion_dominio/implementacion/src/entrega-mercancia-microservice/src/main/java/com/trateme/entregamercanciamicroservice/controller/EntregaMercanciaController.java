@@ -54,6 +54,7 @@ public class EntregaMercanciaController {
 	public Remision save(@RequestBody Entrega e) {	 
 		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
 		//flete 0%
+		r.tipoEntrega=1; //ventanilla
 		return entregaMercanciaService.save(e);
 	} 
 	
@@ -62,6 +63,7 @@ public class EntregaMercanciaController {
 	public Remision save(@RequestBody Entrega e) {		
 		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
 		//flete 50%
+		r.tipoEntrega=2; //base
 		return entregaMercanciaService.save(e);
 	} 
 	
@@ -70,6 +72,7 @@ public class EntregaMercanciaController {
 	public Remision save(@RequestBody Entrega e) {		
 		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
 		//flete 100% 
+		r.tipoEntrega=3; //dirección destino
 		return entregaMercanciaService.save(e);
 	} 
 }

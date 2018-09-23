@@ -36,6 +36,10 @@ public class Remision implements Serializable {
 	private LocalTime horaCreacionRemision;
 	@Column(name="token")
 	private String token;
+	@Column(name="tipo_recogida")
+	private Integer tipoRecogida; //base, ventanilla, dirección origen
+	@Column(name="tipo_entrega")
+	private Integer tipoEntrega; //base, ventanilla, dirección destino
 	
 	@PrePersist
 	public void prePersist() {

@@ -40,6 +40,7 @@ public class RemisionController {
 	public Remision save(@RequestBody Remision r) {	 
 		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
 		//flete 0%
+		r.tipoRecogida=1; //ventanilla
 		return remisionService.save(r);
 	} 
 	
@@ -48,6 +49,7 @@ public class RemisionController {
 	public Remision save(@RequestBody Remision r) {		
 		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
 		//flete 50%
+		r.tipoRecogida=2; //base
 		return remisionService.save(r);
 	} 
 	
@@ -56,6 +58,7 @@ public class RemisionController {
 	public Remision save(@RequestBody Remision r) {		
 		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
 		//flete 100% 
+		r.tipoRecogida=3; //dirección origen
 		return remisionService.save(r);
 	} 
 }
