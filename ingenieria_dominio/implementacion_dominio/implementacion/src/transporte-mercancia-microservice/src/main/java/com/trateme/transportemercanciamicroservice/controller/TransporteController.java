@@ -38,18 +38,9 @@ public class TransporteController {
 	}
 	
 	@CrossOrigin(origins= {""})
-	@PostMapping("/transportemercancia/transportardireccionrecibo")
+	@PostMapping("/transportemercancia/transportar")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Transporte saveD(@PathVariable Transporte r) {		
-		r.setTipoTransporte(Long.valueOf(1)); //desde dirección de origen 
-		return transporteService.save(r);
-	}
-	
-	@CrossOrigin(origins= {""})
-	@PostMapping("/transportemercancia/transportardireccionrecibo")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Transporte save(@PathVariable Transporte r) {		
-		r.setTipoTransporte(Long.valueOf(2)); //desde dirección de destino 
+	public Transporte saveD(@PathVariable Transporte r) {		 
 		return transporteService.save(r);
 	}
 }
