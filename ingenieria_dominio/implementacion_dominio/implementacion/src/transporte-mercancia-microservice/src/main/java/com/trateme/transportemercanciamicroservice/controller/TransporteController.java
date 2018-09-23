@@ -24,13 +24,13 @@ public class TransporteController {
 	@Autowired
 	private ITransporteService transporteService;
 	
-	@PostMapping("/transporte/{id}")
+	@PostMapping("/TransporteMercancia/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Transporte findById(@PathVariable Long id) {
 		return transporteService.findById(id);
 	}
 	
-	@GetMapping("/transporte/all")
+	@GetMapping("/TransporteMercancia/Consultar")
 	@ResponseStatus(HttpStatus.OK)
 	public List<Transporte> findAll(){
 		return transporteService.findAll();

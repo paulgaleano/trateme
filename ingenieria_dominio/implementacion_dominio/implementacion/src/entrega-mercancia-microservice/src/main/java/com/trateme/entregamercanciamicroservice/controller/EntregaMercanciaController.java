@@ -23,27 +23,53 @@ public class EntregaMercanciaController {
 	@Autowired
 	private IEntregaMercanciaService entregaMercanciaService;
 	
-	@GetMapping("/entregamercancias/{codigoEntrega}")
+	@GetMapping("/entregarmercancia/{codigoEntrega}")
 	@ResponseStatus(HttpStatus.OK)
 	public Optional<Entrega> findById(@PathVariable Long codigoEntrega){
 		return entregaMercanciaService.findById(codigoEntrega);
 	}
 	
-	@PostMapping("/entregamercancias")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Entrega save(@RequestBody Entrega e) throws Exception {		
-		return entregaMercanciaService.save(e);
-	}
-	
-	@GetMapping("/entregamercancias")
+	@GetMapping("/entregarmercancia/consultar")
 	@ResponseStatus(HttpStatus.OK)
 	public List<Entrega> findAll(){
 		return entregaMercanciaService.findAll();
 	}
 	
-	@GetMapping("/entregamercancias/operadores/{codigoOperador}")
+	@GetMapping("/entregarmercancia/operadores/{codigoOperador}")
 	@ResponseStatus(HttpStatus.OK)
 	public List<Entrega> findByCodigoOperador(@PathVariable Integer codigoOperador){
 		return entregaMercanciaService.findByCodigoOperador(codigoOperador);
+	}
+	
+	@PostMapping("/entregarmercancia")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Entrega save(@RequestBody Entrega e) throws Exception {		
+		return entregaMercanciaService.save(e);
 	}	
+
+	//adicionadas por variabilidad
+
+	@PostMapping("/entregarmercancia/entregarenventanilla")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Remision save(@RequestBody Entrega e) {	 
+		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
+		//flete 0%
+		return entregaMercanciaService.save(e);
+	} 
+	
+	@PostMapping("/entregarmercancia/entregarenbase")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Remision save(@RequestBody Entrega e) {		
+		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
+		//flete 50%
+		return entregaMercanciaService.save(e);
+	} 
+	
+	@PostMapping("/entregarmercancia/entregarendirecciondestino")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Remision save(@RequestBody Entrega e) {		
+		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
+		//flete 100% 
+		return entregaMercanciaService.save(e);
+	} 
 }

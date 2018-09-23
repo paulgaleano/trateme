@@ -24,19 +24,19 @@ public class RecogidaController {
 	@Autowired
 	private IRecogidaService recogidaService;
 	
-	@GetMapping("/recogida/all")
+	@GetMapping("/ProgramacionServicio/Consultar")
 	@ResponseStatus(HttpStatus.OK)
 	public List<Recogida> findAll(){
 		return recogidaService.findAll();
 	}
 	
-	@PostMapping("/recogida/save")
+	@PostMapping("/ProgramacionServicio/Programar")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Recogida save(@RequestBody Recogida r) {		
 		return recogidaService.save(r);
 	}
 	
-	@GetMapping("/recogida/{id}")
+	@GetMapping("/ProgramacionServicio/{id}")
 	public Recogida findById(@PathVariable Long id) {
 		return recogidaService.findById(id);
 	}

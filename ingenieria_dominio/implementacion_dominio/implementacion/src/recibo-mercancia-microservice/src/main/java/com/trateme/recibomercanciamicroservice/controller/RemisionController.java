@@ -23,21 +23,39 @@ public class RemisionController {
 	@Autowired
 	private IRemisionService remisionService;
 	
-	@GetMapping("/remision/{id}")
+	@GetMapping("/ReciboMercancia/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public Remision findById(@PathVariable String id) {
 		return remisionService.findById(id);
 	}
 	
-	@GetMapping("/remision/all")
+	@GetMapping("/recibomercancia/consultar")
 	@ResponseStatus(HttpStatus.OK)
 	public List<Remision> findAll(){
 		return remisionService.findAll();
 	}
 	
-	@PostMapping("/remision/save")
+	@PostMapping("/recibomercancia/recibirenventanilla")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Remision save(@RequestBody Remision r) {	 
+		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
+		//flete 0%
+		return remisionService.save(r);
+	} 
+	
+	@PostMapping("/recibomercancia/recibirenbase")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Remision save(@RequestBody Remision r) {		
+		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
+		//flete 50%
 		return remisionService.save(r);
-	}
+	} 
+	
+	@PostMapping("/recibomercancia/recibirendireccionorigen")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Remision save(@RequestBody Remision r) {		
+		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
+		//flete 100% 
+		return remisionService.save(r);
+	} 
 }
