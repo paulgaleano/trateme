@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,10 +23,10 @@ public class TransporteController {
 	@Autowired
 	private ITransporteService transporteService;
 
-	@PostMapping("/transportemercancia/{id}")
+	@GetMapping("/transportemercancia/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Transporte findById(@PathVariable Long id) {
-		return transporteService.findById(id);
+	public Transporte findById(@PathVariable int id) {
+		return transporteService.findById(Long.valueOf(id));
 	}
 
 	@GetMapping("/transportemercancia/consultar")
@@ -36,7 +37,7 @@ public class TransporteController {
 
 	@PostMapping("/transportemercancia/transportardireccionrecibo")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Transporte save(@PathVariable Transporte t) {
+	public Transporte save(@RequestBody Transporte t) {
 		return transporteService.save(t);
 	}
 }

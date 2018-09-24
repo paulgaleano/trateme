@@ -24,7 +24,7 @@ public class RemisionController {
 	@Autowired
 	private IRemisionService remisionService;
 	
-	@GetMapping("/ReciboMercancia/{id}")
+	@GetMapping("/recibomercancia/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public Remision findById(@PathVariable String id) {
 		return remisionService.findById(id);
@@ -36,36 +36,11 @@ public class RemisionController {
 		return remisionService.findAll();
 	}
 	
-	@CrossOrigin(origins= {""})
-	@PostMapping("/recibomercancia/recibirenventanilla")
+	@PostMapping("/recibomercancia")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Remision saveV(@PathVariable Remision r) {	 
-		r.setCodigoRecogidas(Long.valueOf(1)); //ventanilla
-		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
-		//flete 0%
-		r.setFleteTotal(0.0);
+	public Remision save(@RequestBody Remision r) {
 		return remisionService.save(r);
 	} 
 	
-	@CrossOrigin(origins= {""})
-	@PostMapping("/recibomercancia/recibirenbase")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Remision saveB(@RequestBody Remision r) {		
-		r.setCodigoRecogidas(Long.valueOf(2)); //base
-		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
-		//flete 50%
-		r.setFleteTotal(50.0);
-		return remisionService.save(r);
-	} 
-	
-	@CrossOrigin(origins= {""})
-	@PostMapping("/recibomercancia/recibirendireccionorigen")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Remision saveD(@RequestBody Remision r) {		
-		r.setCodigoRecogidas(Long.valueOf(3)); //dirección origen
-		//aplicar lista blanca pa saber si el cliente tiene permiso para esta opción dependiendo del producto que compró
-		//flete 100% 
-		r.setFleteTotal(100.0);
-		return remisionService.save(r);
-	} 
+
 }
