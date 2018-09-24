@@ -117,7 +117,7 @@ public class Entrega implements Serializable {
 		return flete;
 	}
 
-	public void setFlete(Doble flete) {
+	public void setFlete(Double flete) {
 		this.flete = flete;
 	}
 
