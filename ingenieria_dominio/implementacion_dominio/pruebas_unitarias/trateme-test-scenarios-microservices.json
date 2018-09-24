@@ -1,0 +1,727 @@
+{
+  "front-version": "2.19.1",
+  "version": 3,
+  "nodes": [
+    {
+      "type": "Project",
+      "id": "db9cf555-188b-4706-9cac-7ef6be0c1e8d",
+      "lastModified": "2018-09-23T21:09:07.945-05:00",
+      "name": "trateme"
+    },
+    {
+      "type": "Service",
+      "id": "ea3afafd-0253-41ff-b3dc-e452087da7dd",
+      "lastModified": "2018-09-23T21:03:25.263-05:00",
+      "name": "entrega-mercancia-microservice",
+      "parentId": "db9cf555-188b-4706-9cac-7ef6be0c1e8d"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n\"codigoOperador\": 13,\n\"tipoEntrega\": 1,\n\"codigoRemision\": \"11\",\n\"codigoTripulacion\": 3,\n\"token\": \"{}\"\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8084",
+        "path": "/entregamercancias"
+      },
+      "id": "945f8587-28ec-41d6-a6dd-96a364b44473",
+      "lastModified": "2018-09-23T20:59:26.976-05:00",
+      "name": "Crear entrega",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "ea3afafd-0253-41ff-b3dc-e452087da7dd"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8084",
+        "path": "/entregamercancias/2"
+      },
+      "id": "5dd7b153-cb97-4647-92d2-638b9ef0031d",
+      "lastModified": "2018-09-23T20:52:30.889-05:00",
+      "name": "Obtener entrega por codigo entrega",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "ea3afafd-0253-41ff-b3dc-e452087da7dd"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8084",
+        "path": "/entregamercancias"
+      },
+      "id": "1bb36fbf-17d7-4fdb-a2f5-55725cb660a6",
+      "lastModified": "2018-09-23T20:52:30.889-05:00",
+      "name": "Obtener entregas",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "ea3afafd-0253-41ff-b3dc-e452087da7dd"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8084",
+        "path": "/entregamercancias/operadores/10"
+      },
+      "id": "80c54b41-4870-45b4-b5f7-d58fccbf22e6",
+      "lastModified": "2018-09-23T20:52:30.889-05:00",
+      "name": "Obtener entregas por codigo operador",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "ea3afafd-0253-41ff-b3dc-e452087da7dd"
+    },
+    {
+      "type": "Service",
+      "id": "a4c86ef9-aff0-4dbb-8610-0bd50c0cf71e",
+      "lastModified": "2018-09-23T21:03:08.769-05:00",
+      "name": "programar-recogida-microservice",
+      "parentId": "db9cf555-188b-4706-9cac-7ef6be0c1e8d"
+    },
+    {
+      "type": "Service",
+      "id": "c44005a5-39e6-4ca8-928f-badfe7233732",
+      "lastModified": "2018-09-23T21:03:39.721-05:00",
+      "name": "rastreo-mercancia-microservice",
+      "parentId": "db9cf555-188b-4706-9cac-7ef6be0c1e8d"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n\"codigoOperador\": 11,\n\"codigoSubProceso\": 2,\n\"codigoRemision\": \"10\",\n\"codigoTripulacion\": 2,\n\"tipo\":3,\n\"token\": \"{}\"\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8085",
+        "path": "/rastreomercancias"
+      },
+      "id": "e72b904d-d13e-4b96-aed6-515370e125e7",
+      "lastModified": "2018-09-23T17:16:20.502-05:00",
+      "name": "Crear Rastreo",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "c44005a5-39e6-4ca8-928f-badfe7233732"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8085",
+        "path": "/rastreomercancias/remisiones/10/tipos/1"
+      },
+      "id": "96d4ed0c-f78b-4c46-814c-6ed94ffaaf62",
+      "lastModified": "2018-09-23T17:16:20.502-05:00",
+      "name": "Obtener rastreo por codigo de remisión y tipo de rastreo",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "c44005a5-39e6-4ca8-928f-badfe7233732"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8085",
+        "path": "/rastreomercancias/operadores/11"
+      },
+      "id": "68a1503a-fd09-48d4-9991-cd85978c076d",
+      "lastModified": "2018-09-23T17:16:20.502-05:00",
+      "name": "Obtener rastreo por codigo operador",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "c44005a5-39e6-4ca8-928f-badfe7233732"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8085",
+        "path": "/rastreomercancias/remisiones/10"
+      },
+      "id": "09b598dd-3072-4b7b-bde4-833878171428",
+      "lastModified": "2018-09-23T17:16:20.502-05:00",
+      "name": "Obtener rastreo por codigo remisión",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "c44005a5-39e6-4ca8-928f-badfe7233732"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8085",
+        "path": "/rastreomercancias"
+      },
+      "id": "9a2b36eb-91e8-40a1-ab79-3af3fb8cfd6b",
+      "lastModified": "2018-09-23T17:16:20.503-05:00",
+      "name": "Obtener todos los rastreos",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "c44005a5-39e6-4ca8-928f-badfe7233732"
+    },
+    {
+      "type": "Service",
+      "id": "47432898-d7ff-4745-bfc0-efaba6e22e0f",
+      "lastModified": "2018-09-23T21:03:56.087-05:00",
+      "name": "recibo-mercancia-microservice",
+      "parentId": "db9cf555-188b-4706-9cac-7ef6be0c1e8d"
+    },
+    {
+      "type": "Service",
+      "id": "da022139-22a0-482b-94d5-678a28de1baf",
+      "lastModified": "2018-09-23T21:04:47.536-05:00",
+      "name": "transporte-mercancia-microservice",
+      "parentId": "db9cf555-188b-4706-9cac-7ef6be0c1e8d"
+    },
+    {
+      "type": "Scenario",
+      "id": "1cf18d5c-ecae-4d3e-bfd7-6fcc8fa6c85e",
+      "lastModified": "2018-09-23T21:09:07.945-05:00",
+      "name": "Test Scenarios Microservices",
+      "requestOrder": [
+        "Crear Rastreo",
+        "Obtener rastreo por codigo de remisión y tipo de rastreo",
+        "Obtener rastreo por codigo operador",
+        "Obtener rastreo por codigo remisión",
+        "Obtener todos los rastreos",
+        "Obtener entregas por codigo operador",
+        "Obtener entregas",
+        "Obtener entrega por codigo entrega",
+        "Crear entrega"
+      ],
+      "parentId": "db9cf555-188b-4706-9cac-7ef6be0c1e8d"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n\"codigoOperador\": 11,\n\"codigoSubProceso\": 2,\n\"codigoRemision\": \"10\",\n\"codigoTripulacion\": 2,\n\"tipo\":3,\n\"token\": \"{}\"\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8085",
+        "path": "/rastreomercancias"
+      },
+      "id": "ec3fbde6-0c28-48cc-b3fb-c44f4a5610b8",
+      "lastModified": "2018-09-23T20:49:15.228-05:00",
+      "name": "Crear Rastreo",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "1cf18d5c-ecae-4d3e-bfd7-6fcc8fa6c85e"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8085",
+        "path": "/rastreomercancias/remisiones/10/tipos/1"
+      },
+      "id": "e1bc4975-5337-449b-b99d-0e75ad787b70",
+      "lastModified": "2018-09-23T20:49:15.228-05:00",
+      "name": "Obtener rastreo por codigo de remisión y tipo de rastreo",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "1cf18d5c-ecae-4d3e-bfd7-6fcc8fa6c85e"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8085",
+        "path": "/rastreomercancias/operadores/11"
+      },
+      "id": "b86edd52-412b-49a4-be02-3aa7e19fab71",
+      "lastModified": "2018-09-23T20:49:15.228-05:00",
+      "name": "Obtener rastreo por codigo operador",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "1cf18d5c-ecae-4d3e-bfd7-6fcc8fa6c85e"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8085",
+        "path": "/rastreomercancias/remisiones/10"
+      },
+      "id": "b6a5fb89-ceac-4f04-8001-1321d523a2bd",
+      "lastModified": "2018-09-23T20:49:15.229-05:00",
+      "name": "Obtener rastreo por codigo remisión",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "1cf18d5c-ecae-4d3e-bfd7-6fcc8fa6c85e"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8085",
+        "path": "/rastreomercancias"
+      },
+      "id": "511d52e8-0c70-444d-b1a8-6d63a379ec1f",
+      "lastModified": "2018-09-23T20:49:15.229-05:00",
+      "name": "Obtener todos los rastreos",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "1cf18d5c-ecae-4d3e-bfd7-6fcc8fa6c85e"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8084",
+        "path": "/entregamercancias/operadores/10"
+      },
+      "id": "a6594d7d-9594-49d1-98e4-19893dc1297c",
+      "lastModified": "2018-09-23T20:52:54.156-05:00",
+      "name": "Obtener entregas por codigo operador",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "1cf18d5c-ecae-4d3e-bfd7-6fcc8fa6c85e"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8084",
+        "path": "/entregamercancias"
+      },
+      "id": "27b21fb7-b1f0-41fb-9cdb-d877592129ad",
+      "lastModified": "2018-09-23T20:52:54.156-05:00",
+      "name": "Obtener entregas",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "1cf18d5c-ecae-4d3e-bfd7-6fcc8fa6c85e"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8084",
+        "path": "/entregamercancias/2"
+      },
+      "id": "fc1f585f-5529-42f7-b89b-9cc7b6c53050",
+      "lastModified": "2018-09-23T20:52:54.156-05:00",
+      "name": "Obtener entrega por codigo entrega",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "1cf18d5c-ecae-4d3e-bfd7-6fcc8fa6c85e"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n\"codigoOperador\": 13,\n\"tipoEntrega\": 1,\n\"codigoRemision\": \"11\",\n\"codigoTripulacion\": 3,\n\"token\": \"{}\"\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8084",
+        "path": "/entregamercancias"
+      },
+      "id": "db3ed357-d015-4de5-9a0a-67836d01b5e2",
+      "lastModified": "2018-09-23T20:52:54.156-05:00",
+      "name": "Crear entrega",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "1cf18d5c-ecae-4d3e-bfd7-6fcc8fa6c85e"
+    }
+  ]
+}

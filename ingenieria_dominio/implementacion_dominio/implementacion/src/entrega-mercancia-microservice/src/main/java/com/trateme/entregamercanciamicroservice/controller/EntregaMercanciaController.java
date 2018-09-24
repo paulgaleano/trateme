@@ -23,25 +23,25 @@ public class EntregaMercanciaController {
 	@Autowired
 	private IEntregaMercanciaService entregaMercanciaService;
 	
-	@GetMapping("/entregarmercancia/{codigoEntrega}")
+	@GetMapping("/entregamercancias/{codigoEntrega}")
 	@ResponseStatus(HttpStatus.OK)
 	public Optional<Entrega> findById(@PathVariable Long codigoEntrega){
 		return entregaMercanciaService.findById(codigoEntrega);
 	}
 	
-	@GetMapping("/entregarmercancia/consultar")
+	@GetMapping("/entregamercancias")
 	@ResponseStatus(HttpStatus.OK)
 	public List<Entrega> findAll(){
 		return entregaMercanciaService.findAll();
 	}
 	
-	@GetMapping("/entregarmercancia/operadores/{codigoOperador}")
+	@GetMapping("/entregamercancias/operadores/{codigoOperador}")
 	@ResponseStatus(HttpStatus.OK)
 	public List<Entrega> findByCodigoOperador(@PathVariable Integer codigoOperador){
 		return entregaMercanciaService.findByCodigoOperador(codigoOperador);
 	}
 	
-	@PostMapping("/entregarmercancia")
+	@PostMapping("/entregamercancias")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Entrega save(@RequestBody Entrega e) throws Exception {		
 		return entregaMercanciaService.save(e);
