@@ -28,23 +28,25 @@ CREATE TABLE `recogida` (
   `fecha_recogida` date DEFAULT NULL,
   `hora_recogida` time DEFAULT NULL,
   `token` json DEFAULT NULL,
-  PRIMARY KEY (`codigo_recogidas`));
-  
-CREATE TABLE `trateme`.`remision` (
-  `codigo_remision` VARCHAR(50) NOT NULL,
-  `codigo_operador` INT NOT NULL,
-  `codigo_recogidas` INT NOT NULL,
-  `codigo_tripulacion` INT NOT NULL,
-  `numero_total_unidades` INT NOT NULL,
-  `peso_total_unidades` DECIMAL NOT NULL,
-  `volumen_total_unidades` DECIMAL NOT NULL,
-  `flete_total` DECIMAL NOT NULL,
+  PRIMARY KEY (`codigo_recogidas`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `remision` (
+  `codigo_remision` varchar(50) NOT NULL,
+  `codigo_operador` int(11) NOT NULL,
+  `codigo_recogidas` int(11) NOT NULL,
+  `codigo_tripulacion` int(11) NOT NULL,
+  `numero_total_unidades` int(11) NOT NULL,
+  `peso_total_unidades` decimal(10,0) NOT NULL,
+  `volumen_total_unidades` decimal(10,0) NOT NULL,
+  `flete_total` decimal(10,0) NOT NULL,
   `fecha_creacion_remision` date DEFAULT NULL,
   `hora_creacion_remision` time DEFAULT NULL,
-  `token` JSON NOT NULL,
-  PRIMARY KEY (`codigo_remision`));
-  
-  CREATE TABLE `trateme`.`transporte` (
+  `token` json NOT NULL,
+  PRIMARY KEY (`codigo_remision`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `transporte` (
   `codigo_transporte` int(11) NOT NULL AUTO_INCREMENT,
   `codigo_operador` int(11) NOT NULL,
   `tipo_transporte` int(11) NOT NULL,
@@ -55,26 +57,31 @@ CREATE TABLE `trateme`.`remision` (
   `fecha_fin_transporte` date DEFAULT NULL,
   `hora_fin_transporte` time DEFAULT NULL,
   `token` json NOT NULL,
-  PRIMARY KEY (`codigo_transporte`));
-  
-  CREATE TABLE `trateme`.`entrega` (
+  PRIMARY KEY (`codigo_transporte`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `entrega` (
   `codigo_entrega` int(11) NOT NULL AUTO_INCREMENT,
   `codigo_operador` int(11) NOT NULL,
   `tipo_entrega` int(11) NOT NULL,
   `codigo_remision` varchar(50) NOT NULL,
   `codigo_tripulacion` int(11) NOT NULL,
+  `flete` decimal(10,2) DEFAULT NULL,
   `fecha_entrega` date DEFAULT NULL,
   `hora_entrega` time DEFAULT NULL,
   `token` json NOT NULL,
-  PRIMARY KEY (`codigo_entrega`));
-  
-CREATE TABLE `trateme`.`rastreo` (
-  `codigo_rastreo` int(11) NOT NULL AUTO_INCREMENT,
-  `codigo_operador` int(11) NOT NULL,
-  `codigo_sub_proceso` int(11) NOT NULL,
-  `codigo_remision` varchar(50) NOT NULL,
-  `codigo_tripulacion` int(11) NOT NULL,
-  `fecha_rastreo` date DEFAULT NULL,
+  PRIMARY KEY (`codigo_entrega`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `rastreo` (
+  `codigo_rastreo` bigint(20) NOT NULL AUTO_INCREMENT,
+  `codigo_operador` int(11) DEFAULT NULL,
+  `codigo_remision` varchar(255) DEFAULT NULL,
+  `codigo_sub_proceso` int(11) DEFAULT NULL,
+  `codigo_tripulacion` int(11) DEFAULT NULL,
+  `fecha_rastreo` datetime DEFAULT NULL,
   `hora_rastreo` time DEFAULT NULL,
-  `token` json NOT NULL,
-  PRIMARY KEY (`codigo_rastreo`));
+  `tipo` int(11) DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`codigo_rastreo`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
